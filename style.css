@@ -1,0 +1,1714 @@
+/* -------------------------------------------------------------------------------------------------- Global -------------------------------------------------------------------------------------------------- */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Archivo', sans-serif;
+    background-color: rgba(114,96,27);
+}
+
+body {
+    background-color: rgb(75,53,18);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+main {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    height: 79vh;
+    background-color: rgb(75,53,18);
+}
+
+p {
+    font-weight: lighter;
+    line-height: 1.2;
+}
+
+label {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+    text-align: center;
+    width: 6.8rem;
+    font-size: 1.5rem;
+    margin: 3rem 1rem 1rem 1rem;
+    padding: 0.7rem;
+    background-color: rgb(67,58,13, 60%);
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+#mobile-nav {
+    display: none;
+}
+
+.notification {
+    animation-name: fade-out;
+    animation-duration: 4s;
+}
+
+
+/* --------------------------------------------------------------------------------------------------- Header --------------------------------------------------------------------------------------------------- */
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: 0;
+    background-color: rgb(47,70,0);
+    height: 19vh;
+    box-shadow: 0 0 10px black;
+}
+
+#logo {
+    text-align: center;
+    padding-top: 1rem;
+    width: 11vw;
+    max-width: 24vh;
+}
+
+#alt-logo {
+    text-align: center;
+    padding-top: 1rem;
+    font-size: 4rem;
+    max-width: 30vh;
+    font-family: 'Holtwood One SC', serif;
+    color: rgba(54,38,15);
+    text-shadow: 2px 2px rgba(174,134,60);
+    display: none;
+}
+
+/* ---------------------------------------------------------------------------------------------------- About ---------------------------------------------------------------------------------------------------- */
+
+
+aside {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;    
+    background-color: rgb(72,107,0);
+    width: 15vw;
+    height: 99.6%;
+    padding: 2rem;
+    overflow: scroll;
+    align-items: center;
+    border-radius: 0 8% 8% 0;
+    box-shadow: 0 0 10px black;
+    z-index: 2;
+}
+
+#about {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgb(59,38,15);
+    text-shadow: 1px 1px black;
+    cursor: pointer;
+}
+
+#about:hover {
+     color: blue;
+     text-decoration: underline;
+}
+
+#about-text {
+    text-align: center;
+    font-size: 1.5rem;
+    display: none;
+}
+
+/* ---------------------------------------------------------------------------------------------------- Posts ---------------------------------------------------------------------------------------------------- */
+
+
+/* Search bar */
+
+#post-search {
+    text-align: center;
+    justify-self: center;
+    width: 45vw;
+    margin: 3rem 1rem 1.5rem 0;
+    padding: 0.6rem;
+    border: 1px solid black;
+    font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+#search-div {
+    height: 15vh;
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1.5rem auto 0 auto;
+    position: relative;
+    top: 0;
+    box-shadow: 0 0 10px black;
+    border: 2px solid black;
+    border-bottom: 8px solid black;
+    border-radius: 5%;
+    background-color: rgba(201,158,14, 60%);
+}
+
+#search-box-div, #search-buttons-div {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-box-div{
+    justify-content: center;
+    margin-top: 0.5rem;
+    height: 100%;
+    padding-bottom: 2rem;
+}
+
+#submit-search {
+    padding: 0.6rem;
+    font-size: 1.5rem;
+    margin-right: 0;
+}
+
+#clear-search{
+    font-size: 1.5rem;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0.5rem;
+}
+
+#type-search-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 auto;
+}
+
+#type-search {
+    margin-right: 0.5rem;
+}
+
+#type-search-label {
+    font-size: 1.3rem;
+    text-shadow: 1px 1px rgba(174,134,60, 80%);
+}
+
+
+/* Posts */
+
+#posts-interface {
+    overflow-x: hidden;
+    align-items: center;
+    width: 70vw;
+    height: 70vh;
+}
+
+#posts-area {
+overflow-y: scroll;
+height: 52vh;
+position: relative;
+top: 3vh;
+border-top: 1px solid black;
+border-radius: 3%;
+}
+
+.post {
+    margin: 2.5rem auto;
+    background-color: rgb(201,158,14, 60%);
+    padding: 1.5rem;
+    border-radius: 8% 0;
+    width: 60vw;
+    box-shadow: 0 0 10px black;
+    position: relative;
+    top: 0; 
+}
+
+.post-text {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.post-title {
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+
+.post-location {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.message-post-author, .view-messages, .delete-post {
+    text-align: center;
+    width: 6.3rem;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 0.3rem;
+    background-color: rgba(114,96,27, 85%);
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+
+/* Read Messages */
+
+.user-message-div {
+    width: 50vw;
+    height: 55vh;
+    border-radius: 8%;
+    background-color: rgba(129,140,60, 85%);
+    box-shadow:0 0 5px rgba(174,134,60);
+    text-align: center;
+    overflow-x: scroll;
+    position: absolute;
+    z-index: 2;
+    top: 25vh;
+    left: 23.65%;
+    display: none;
+}
+
+.message-title {
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(174,134,60);
+    margin: 3vh auto;
+}
+
+.user-message {
+    margin: 0 auto;
+    width: 40vw;
+    height: 33vh;
+    background-color: rgba(114,96,27, 85%);
+    padding: 2rem;
+    border: 6px solid rgba(174,134,60);
+    border-radius: 8%;
+    overflow-y: scroll;
+}
+
+.user-message-text {
+    text-align: left;
+    font-size: 2.2rem;
+}
+
+.close-user-messages {
+    margin-top: 2.5vh;
+    font-size: 2rem;
+}
+
+
+/* New-Post Modal */
+
+#new-post-modal {
+    position: absolute;
+    width: 57vw;
+    height: 70vh;
+    margin: auto auto;
+    border-radius: 8%;
+    background-color: rgba(46,117,13);
+    border: 3px solid rgba(174,134,60);
+    text-align: center;
+    display: none;
+    overflow-x: scroll;
+    top: 18.5vh;
+    left: 21.5vw;
+}
+
+#new-post-header {
+    margin: 3rem 0;
+}
+
+#new-post-modal h3 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(174,134,60);
+}
+
+#new-post-modal label {
+    font-size: 2rem;
+}
+
+#new-post-modal input {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 1rem 0 2rem 0;
+    width: calc(10rem + 35vw);
+    box-shadow: 0 0 10px rgba(174,134,60);
+}
+
+#new-post-modal textarea {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem 0 2rem 0;
+    width: calc(10rem + 35vw);
+    box-shadow: 0 0 10px rgba(174,134,60);
+}
+
+#post-delivery {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 80%);
+    padding: 1rem 0;
+    margin: 0.5rem auto 2rem auto;
+    box-shadow: 0 0 10px rgba(174,134,60);
+}
+
+#post-delivery-div {
+    width: calc(2rem + 25vw);
+}
+
+#new-post-modal input[type=radio] {
+    width: 2rem;
+    box-shadow: none;
+    margin-bottom: 0;
+}
+
+#post-delivery div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#post-delivery fieldset {
+    display: contents;
+}
+
+#submit-new-post, #cancel-new-post {
+    margin-top: 1.5rem;
+}
+
+#delivery-price-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(10rem + 35vw);
+    margin: 0 auto;
+}
+
+#new-post-modal input[type=number] {
+    width: 8rem;
+}
+
+
+/* Message modal */
+
+#message-modal {
+    position: fixed;
+    top: 20vh;
+    left: 27vw;
+    width: 45vw;
+    height: 50vh;
+    margin: 8vh auto 1rem auto;
+    border-radius: 8%;
+    background-color: rgba(46,117,13);
+    border: 3px solid rgba(174,134,60);
+    text-align: center;
+    z-index: 2;
+    display: none;
+}
+
+#message-modal h3 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(174,134,60);
+    margin: 2rem auto 3rem auto;
+}
+
+#message-modal textarea {
+    width: 35vw;
+    height: 27vh;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
+
+
+/* Confirm Delete modal */
+
+#delete-post-confirm {
+    position: fixed;
+    top: 20vh;
+    left: 43vw;
+    width: 22rem;
+    height: 18rem;
+    margin: 13vh auto 1rem auto;
+    border-radius: 8%;
+    background-color: rgba(46,117,13);
+    border: 3px solid rgba(174,134,60);
+    text-align: center;
+    display: none;
+}
+
+#delete-post-confirm h3 {
+    font-size: 4rem;
+    text-shadow: 0 0 10px rgba(174,134,60);
+}
+
+#confirm-delete, #cancel-delete {
+    margin: 0.8rem 0;
+}
+
+#confirm-delete {
+    margin-right: 1rem;
+}
+
+
+/* Loading animation */
+
+#loading-div {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    margin: 0 auto;
+    z-index: 3;
+    top: 0;
+    backdrop-filter: blur(5px);
+}
+
+#loading-alt {
+    font-family: 'Holtwood One SC', serif;
+    margin: 0 auto;
+    font-size: 6vw;
+    display: none;
+    text-shadow: 1px 1px white;
+}
+
+#loading-main {
+    margin: 0 auto;
+    max-width: 12vw;
+    max-height: 30vh ;
+    width: auto;
+    height: auto;
+    opacity: 0.7;
+}
+
+/* ----------------------------------------------------------------------------------------------------- Nav ----------------------------------------------------------------------------------------------------- */
+
+
+/* All Nav */
+
+nav {
+    position: relative;
+    right: 0;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(72,107,0);
+    width: 15vw;
+    height: 99.6%;
+    padding: 2rem;
+    border-radius: 8% 0 0 8%;
+    box-shadow: 0 0 10px black;
+    z-index: 2;
+}
+
+nav input {
+    opacity: .75;
+}
+
+nav div {
+    width: 100%;
+    overflow: scroll;
+}
+
+nav label {
+    font-size: calc(1rem + 0.4vw);
+}
+
+nav input {
+    font-size: calc(1rem + 0.4vw);
+    padding: 0.3rem;
+    margin: 1rem 0;
+}
+
+.hide {
+    font-size: 2rem;
+    color: blue;
+    display: none;
+}
+
+.hide:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* Logged-Out Nav */
+
+#sign-up, #log-in {
+    display: none;
+}
+
+#remember-me {
+    width: auto;
+    margin-right: 1rem;
+}
+
+#log-in-button, #sign-up-button{
+    text-align: center;
+    width: 6.8rem;
+    font-size: 1.5rem;
+    margin: 1rem 1rem 5rem 1rem;
+    padding: 0.7rem;
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+#password-mismatch, #username-taken, #invalid-credentials {
+    background-color: rgb(196, 91, 91, 95%);
+    position: absolute;
+    bottom: 16.5rem;
+    left: 5rem;
+    padding: 1.5rem;
+    width: 12vw;
+    font-size: calc(1rem + 0.4vw);
+    box-shadow: 0 0 5px 3px rgba(174,134,60);
+    border-radius: 7%;
+    display: none;
+}
+
+#username-taken{
+    bottom: 20rem;
+}
+
+#invalid-credentials {
+    bottom: 25rem;
+    left: 2.5rem;
+}
+
+
+/* Logged-In Nav */
+#logged-in-nav {
+    display: none;
+    padding: 1rem;
+}
+
+#log-out-button, #new-post-button {
+    text-align: center;
+    width: 8rem;
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 0.7rem;
+    border: 1px solid black;
+    border-radius: 15%;
+}
+
+.account-icon {
+    font-size: 10rem;
+    opacity: 0.7;
+}
+
+#successful-sign-up, #successful-log-in, #successful-log-out{
+    background-color: rgba(46,117,13, 95%);
+    padding: 1.5rem;
+    box-shadow: 0 0 5px 1px rgba(174,134,60, 60%);
+    border-radius: 8%;
+    display: none;
+}
+
+#successful-sign-up h3, #successful-log-in p, #successful-log-out p {
+    font-size: calc(1rem + 0.8vw);
+}
+
+#successful-sign-up p {
+    font-size: calc(1rem + 0.4vw);
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- Footer --------------------------------------------------------------------------------------------------- */
+
+
+footer {
+    text-align: center;
+    background-color: rgb(47,70,0);
+    width: 100%;
+    height: 11vh;
+    box-shadow: 0 0 10px black;
+}
+
+#credits {
+    font-size: 2rem;
+    padding: 1vh 0;
+}
+
+#linked-in {
+    max-width: 4rem;
+    margin-bottom: 1rem;
+    height: auto;
+}
+
+#linked-in-link {
+    font-size: 2rem;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------ Media Queries ------------------------------------------------------------------------------------------------ */
+
+
+/* -------------------------------- Horizontal -------------------------------- */
+
+
+@media (max-width: 1400px) {
+
+    /* Major Sections */
+
+    #logo {
+        width: 14vw;
+    }
+    
+    aside {
+        width: 18vw;
+    }
+
+    nav {
+        width: 22vw;
+    }
+
+
+    /* Modal */
+
+    #new-post-modal {
+        left: 19.7vw;
+    }
+
+    #message-modal {
+        left: 19.5vw;
+        width: 57vw;
+    }
+
+    #message-modal textarea {
+        width: 45vw;
+    }
+
+
+    /* Notifications */
+
+    #invalid-credentials {
+        left: 5rem;
+    }
+
+    #delete-post-confirm {
+        left: 41vw;
+    }
+}
+
+
+
+@media (max-width: 1100px) {
+
+    /* Header and Aside */
+
+    #logo {
+        width: 18vw;
+    }
+    
+    aside {
+        width: 22vw;
+    }
+
+
+    /* Nav */
+
+    nav {
+        width: 25vw;
+    }
+
+    #log-in-button, #sign-up-button{
+        margin-bottom: 2rem;
+    }
+
+
+    /* Posts */
+
+    .post {
+        width: 50vw;
+    }
+    
+
+    /* Search bar */
+
+    #post-search {
+        width: 40vw;
+        margin: 3rem 1rem 1.5rem 0;
+    }
+
+
+    /* New post modal */
+    #new-post-modal {
+        left: 20.25vw;
+        width: 57vw;
+        z-index: 2;
+    }
+    
+    #new-post-modal input {
+        width: calc(10rem + 43vw);
+    }
+    
+    #new-post-modal textarea {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0 2rem 0;
+        width: calc(10rem + 43vw);
+    }
+    
+    #post-delivery {
+        padding: 1rem 0;
+        margin: 0.5rem auto 2rem auto;
+    }
+    
+
+    /* Message modal */
+
+    #message-modal {
+        left: 20.2vw;
+    }
+
+    #message-modal h3 {
+        font-size: 3.2rem;
+    }
+
+
+    /* Confirm delete modal */
+ 
+    #delete-post-confirm {
+        left: 38vw;
+    }
+
+}
+
+
+
+@media (max-width: 800px) {
+
+    /* Major Sections */
+
+    body {
+        height: 100%;
+    }
+    
+    main {
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+    }
+
+    header, footer {
+        position: static;
+        width: 100%;
+    }
+
+    header {
+        height: 20vh;
+        border-bottom: 5px solid black;
+    }
+
+    footer {
+        position: relative;
+        bottom: 0;
+    }
+
+    #logo {
+        width: 23vw;
+    }
+
+    
+    /* Posts */
+
+    #posts-interface {
+        width: 100%;
+        position: relative;
+        overflow-y: initial;
+        height: 100%;
+    }
+
+    #posts-area {
+        position: relative;
+        overflow-y: initial;
+        top: 5%;
+        height: 100%;
+    }
+
+    .post {
+        width: 80vw;
+        margin: 2.5rem auto;
+    }
+
+    /* Search bar */
+
+    #post-search {
+        width: 53vw;
+        margin: 2rem 1.5rem 1.5rem auto;
+    }
+
+    #search-div{
+        width: 80vw;
+    }
+
+    #submit-search, #clear-search {
+        padding: 0.2rem;
+    }
+
+    #submit-search {
+        margin-bottom: 0.5rem;
+    }
+
+
+    /* Mobile Nav */
+
+    #mobile-about-div, nav {
+        display: block;
+        width: 100%;
+        padding: 0.2rem;
+        border-radius: 0 0 4% 3%;
+        border-bottom: 3px solid rgba(66, 50, 19, 20%);
+        line-height: 1.4;
+    }
+
+    #mobile-about-div {
+        border-bottom: 5px solid black;
+        height: auto;
+        padding-bottom: 3rem;
+    }
+
+    nav {
+        height: auto;
+        flex-direction: row;
+        border-bottom: 5px solid black;
+        padding-bottom: 1rem;
+    }
+
+    .hide {
+        display: initial;
+    }
+
+
+    /* Mobile About */
+
+
+    #mobile-about-div {
+        overflow: hidden;
+    }
+
+    #about-mobile {
+        font-size: 4rem;
+        text-align: center;
+        color: blue;
+        cursor: pointer;
+    }
+
+    #about-mobile:hover {
+        text-decoration: underline;
+    }
+    
+    #about-text-mobile {
+        text-align: center;
+        font-size: 1.5rem;
+        display: none;
+    }
+
+
+    /* New post modal */
+
+    #new-post-modal {
+        position: fixed;
+        top: 15vh;
+        left: 7vw;
+        width: 85vw;
+        z-index: 2;
+    }
+    
+    #new-post-modal input {
+        width: calc(10rem + 55vw);
+    }
+    
+    #new-post-modal textarea {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0 2rem 0;
+        width: calc(10rem + 55vw);
+    }
+    
+    #post-delivery {
+        padding: 1rem 0;
+        margin: 0.5rem auto 2rem auto;
+    }
+
+
+    /* Message modal */
+
+    #message-modal {
+        width: 75vw;
+        left: 12.5vw;
+    }
+    
+    #message-modal h3 {
+        font-size: 2.5rem;
+        text-shadow: 0 0 10px rgba(174,134,60);
+        margin: 2rem auto 3rem auto;
+    }
+    
+    #message-modal textarea {
+        width: 60vw;
+        height: 27vh;
+        font-size: 1.5rem;
+    }
+
+
+    /* Confirm delete modal */
+
+    #delete-post-confirm {
+        left: 34vw;
+        z-index: 3;
+    }
+
+    /* Messages */
+
+    .user-message-div {
+        width: 70vw;
+        left: 15.15%;
+        position: fixed
+    }
+
+    .message-title {
+        font-size: 3rem;
+    }
+
+    .user-message {
+        width: 55vw;
+        padding: 1.5rem;
+    }
+
+    .user-message-text {
+        font-size: 1.8rem;
+    }
+
+    .close-user-messages {
+        font-size: 1.8rem;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    #logo {
+        width: 29vw;
+    }
+
+
+    /* Messages */
+
+    .message-title {
+        font-size: 2rem;
+    }
+
+    .user-message {
+        padding: 1rem;
+        height: 36vh;
+    }
+
+    .user-message-text {
+        font-size: 1.5rem;
+    }
+
+    .close-user-messages {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+/* -------------------------------- Vertical -------------------------------- */
+
+
+
+@media (max-height: 1000px) {
+
+    /* Logo */
+
+    #alt-logo {
+        font-size: 4rem;
+        max-width: 40vh;
+    }
+
+    /* New post modal */
+
+    #new-post-header {
+        margin: 1.5rem 0;
+    }
+    
+    #new-post-modal h3 {
+        font-size: 3.5rem;
+    }
+    
+    #new-post-modal label {
+        font-size: 1.8rem;
+    }
+    
+    #new-post-modal input {
+        font-size: 1.2rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+    
+    #new-post-modal textarea {
+        height: 16vh;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        margin: 0.5rem 0 1.5rem 0;
+    }
+    
+    #post-delivery {
+        padding: 1rem 0.5rem;
+        margin: 0.5rem auto 2rem auto;
+    }
+
+    #submit-sign-up {
+        margin-top: 0;
+    }
+
+}
+
+
+
+@media (max-height: 800px) {
+
+    /* Post Area */
+
+    /* #posts-area {
+        max-height: 58vh;
+    } */
+    
+    
+    /* Header */
+
+    #alt-logo {
+        font-size: 3rem;
+    }    
+        
+    #sub-heading {
+        display: none;
+    }
+
+
+    /* About (Mobile) */
+
+    #about-mobile {
+        font-size: 3rem;
+    }
+
+
+    /* Nav */
+
+    nav label {
+        font-size: 1rem;
+    }
+    
+    nav input {
+        font-size: 1rem;
+        margin: 0.8rem 0;
+        width: calc(10rem + 6vw)
+    }
+    
+    .submit {
+        font-size: 1.3rem;
+        margin: 2rem 1rem 1rem 1rem;
+    }
+    
+    #password-mismatch, #username-taken, #invalid-credentials {
+        bottom: 14.5rem;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    #username-taken{
+        bottom: 17rem;
+    }
+    
+    #successful-sign-up, #successful-log-in{
+        padding: 1rem;
+    }
+    
+    #invalid-credentials {
+        bottom: 20rem;
+    }
+
+    /* New post modal */
+
+    #new-post-header {
+        margin: 1vh 0;
+    }
+    
+    #new-post-modal h3 {
+        font-size: 3rem;
+    }
+    
+    #new-post-modal label {
+        font-size: 1.5rem;
+    }
+    
+    #new-post-modal input {
+        font-size: 1rem;
+        margin: 0.5rem 0 1rem 0;
+    }
+    
+    #new-post-modal textarea {
+        height: 15vh;
+        font-size: 1rem;
+        margin: 0.5rem 0 1rem 0;
+    }
+    
+    #post-delivery {
+        padding: 0.5rem;
+        margin: 0.5rem auto 1rem auto;
+    }
+
+    #new-post-modal input[type=radio] {
+        margin-top: 0.3rem;
+    }
+
+
+    /* Message modal */
+
+    #message-modal {
+        height: 55vh;
+        margin: 6vh auto 1rem auto;
+    }
+
+    #message-modal h3 {
+        margin: 3rem auto;
+        font-size: 3rem;
+    }
+
+    
+    /* Footer */
+
+    #linked-in {
+        max-width: 3rem;
+    }
+
+    #credits {
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
+@media (max-height: 600px) {
+
+    /* Nav */
+    
+    nav input {
+        margin: 0.6rem 0;
+        width: calc(10rem + 8vw)
+    }
+    
+    .submit {
+        font-size: 1.3rem;
+        margin: 0.5rem 1rem 0 1rem;
+    }
+    
+    #password-mismatch, #username-taken, #invalid-credentials {
+        bottom: 6rem;
+    }
+    
+    #username-taken{
+        bottom: 9.5rem;
+    }
+    
+    #invalid-credentials {
+        bottom: 13rem;
+    }
+
+
+    /* Search */
+
+    #post-search {
+        margin-bottom: 0.5rem;
+    }
+
+    /* New post modal */
+
+    #new-post-header {
+        margin: 0.8vh 0;
+    }
+    
+    #new-post-modal h3 {
+        font-size: 2.5rem;
+    }
+    
+    #new-post-modal label {
+        font-size: 1.3rem;
+    }
+    
+    #new-post-modal input {
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #new-post-modal textarea {
+        height: 13vh;
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #post-delivery {
+        padding: 0.5rem;
+        margin: 0.5rem auto 0.5rem auto;
+        height: 8vh;
+    }
+
+    #new-post-modal input[type=radio] {
+        margin-top: 0rem;
+    }
+
+
+    /* Message modal */
+
+    #message-modal {
+        height: 65vh;
+        margin: 1.5vh auto;
+    }
+
+    #message-modal h3 {
+        font-size: 2.5rem;
+        margin: 2.5rem auto;
+    }
+
+    #message-modal textarea {
+        height: 35vh;
+    }
+
+    #send-message, #cancel-message {
+        margin-top: 3rem;
+    }
+
+
+    /* Messages */
+
+    .message-title {
+        font-size: 3rem;
+    }
+
+    .user-message {
+        margin: 1.5vh auto;
+        padding: 1rem;
+        height: 30vh;
+    }
+
+    .user-message-text {
+        font-size: 1.7rem;
+    }
+
+    .close-user-messages {
+        font-size: 1.5rem;
+        margin-top: 1rem;
+    }
+
+
+    /* Footer */
+
+    #credits {
+        display: inline;
+        margin: 1.5rem 0 0 2rem;
+    }
+
+    #linked-in-link {
+        margin: 1.2rem 2rem 0 0;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+        
+    }
+
+    
+}
+
+
+
+@media (max-height: 500px) {
+
+    /* Logo */
+
+    #alt-logo {
+        font-size: 2rem;
+    }
+
+
+    /* About (Mobile) */
+
+    #about-mobile {
+        font-size: 2rem;
+    }
+
+    
+    /* Post Area */
+
+    #post-search {
+        margin-top: 1.5rem;
+    }
+
+    #search-buttons-div {
+        flex-direction: row;
+        align-items: baseline;
+        margin-bottom: 0.3rem;
+    }
+
+    #submit-search {
+        margin: 0;
+        font-size: 1rem;
+        width: 48px;
+    }
+
+    #clear-search {
+        margin-bottom: 0;
+        font-size: 1rem;
+        width: 48px;
+    }
+
+    #type-search, #type-search-label {
+        display: none;
+    }
+
+
+    /* Nav */
+    
+    #password-mismatch, #username-taken, #invalid-credentials {
+        bottom: 3.5rem;
+    }
+    
+    #username-taken{
+        bottom: 7rem;
+    }
+    
+    #invalid-credentials {
+        bottom: 8rem;
+    }
+
+    /* New post modal */
+
+    #new-post-modal {
+        overflow: scroll;
+    }
+
+    #new-post-header {
+        margin: 0.5vh 0 0.8vh 0;
+    }
+    
+    #new-post-modal h3 {
+        font-size: 2rem;
+    }
+    
+    #new-post-modal label {
+        font-size: 1rem;
+    }
+    
+    #new-post-modal input {
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #new-post-modal textarea {
+        height: 13vh;
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #post-delivery {
+        padding: 0.3rem;
+        margin: 0.5rem auto 0.5rem auto;
+        height: 10vh;
+    }
+
+    #submit-new-post {
+        margin-top: 0.5rem;
+    }
+
+
+    /* Message modal */
+
+    #message-modal {
+        height: 65vh;
+        margin: 0.5vh auto;
+    }
+
+    #message-modal h3 {
+        margin: 1.5rem auto;
+    }
+
+    #message-modal textarea {
+        height: 30vh;
+    }
+
+    #send-message, #cancel-message {
+        margin-top: 2rem;
+    }
+
+
+    /* Messages */
+
+    .message-title {
+        font-size: 2.5rem;
+    }
+
+    .user-message {
+        width: 45vw;
+        margin: 1vh auto;
+        height: 28vh;
+        overflow: scroll;
+    }
+
+    .user-message-text {
+        font-size: 1.7rem;
+    }
+
+    .close-user-messages {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    /* Footer */
+
+    #credits {
+        margin: 1rem 0 0 2rem;
+    }
+
+    #linked-in-link {
+        margin: 0.8rem 2rem 0 0;
+    }
+
+}
+
+
+
+@media (max-height: 350px) {
+
+    /* Logo */
+
+    #alt-logo {
+        max-width: 50vw;
+    }
+
+
+    /* Nav */
+
+    nav input {
+        margin: 0.4rem 0;
+    }
+    
+    .submit {
+        font-size: 1rem;
+        margin: 0.2rem 1rem 0 1rem;
+    }
+    
+    #password-mismatch, #username-taken, #invalid-credentials {
+        bottom: 4rem;
+    }
+    
+    #username-taken{
+        bottom: 6.5rem;
+    }
+    
+    #invalid-credentials {
+        bottom: 3rem;
+    }
+
+
+    /* Post Area */
+
+    #search-div{
+        align-items: baseline;
+        padding: 0;
+        height: 5.5rem;
+    }
+
+    #post-search {
+        font-size: 1.2rem;
+        height: 2.5rem;
+    }
+
+    #search-buttons-div {
+        font-size: 1.2rem;
+    }
+
+    #submit-search {
+        margin: 0;
+        font-size: 1rem;
+        width: 48px;
+    }
+
+    #clear-search {
+        margin-bottom: 0;
+        font-size: 1rem;
+        width: 48px;
+    }
+
+
+    /* New post modal */
+
+    #new-post-modal {
+        overflow: scroll;
+    }
+
+    #new-post-header {
+        margin: 0.5vh 0 0.8vh 0;
+    }
+    
+    #new-post-modal h3 {
+        font-size: 2rem;
+    }
+    
+    #new-post-modal label {
+        font-size: 1rem;
+    }
+    
+    #new-post-modal input {
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #new-post-modal textarea {
+        height: 13vh;
+        font-size: 1rem;
+        margin: 0.5rem 0 0.5rem 0;
+    }
+    
+    #post-delivery {
+        padding: 0.3rem;
+        margin: 0.5rem auto 0.5rem auto;
+        height: 10vh;
+        justify-content: center;
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    #submit-new-post {
+        margin-top: 0.5rem;
+    }
+
+
+    /* Message modal */
+
+    #message-modal {
+        overflow: scroll;
+    }
+
+
+    /* Footer */
+
+    #credits {
+        margin: 0.5rem 0 0 2rem;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+
+    #linked-in{
+        max-width: 2.5rem;
+    }
+
+    #linked-in-link {
+        margin: 0.6rem 2rem 0 0;
+    }
+
+}
+
+
+/* -------------------------------- Vertical and Horizontal -------------------------------- */
+
+@media (max-width: 800px) and (max-height: 500px) {
+
+    #search-buttons-div {
+        flex-direction: column;
+    }
+
+    #clear-search {
+        margin-left: 0;
+    }
+
+}
+
+@media (max-width: 800px) and (max-height: 400px) {
+
+    #log-in-button, #sign-up-button {
+        font-size: 1rem;
+        margin: 0 1rem;
+    }
+
+}
+
+@media (max-width: 800px) and (max-height: 300px) {
+
+    #log-in-button, #sign-up-button, #new-post-button, #log-out-button {
+        height: 2rem;
+        width: 4rem;
+        padding: 0;
+    }
+
+}
+
+
+/* ------------------------------------------------------------------------------------------------ Key Frames------------------------------------------------------------------------------------------------ */
+
+@keyframes fade-out {
+
+    33% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.02;
+        display: none;
+    }
+
+}

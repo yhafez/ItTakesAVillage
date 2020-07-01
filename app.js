@@ -491,7 +491,7 @@ async function renderApp(windowWidth) {
 
 
 //Saves token, username, password, and login time to localstorage after login
-function setLocalStorage(token, username, password) {
+function setLocalStorage(token, username, password, name) {
     localStorage.setItem('token', token);
     localStorage.setItem('login-time', (new Date($.now()))/1000/60);
     localStorage.setItem('username', username);
@@ -566,7 +566,7 @@ async function isLoggedIn() {
         }
         catch (err) {
             console.error(`
-            Uh oh! There's been an error checking if theres a user logged-in.
+            Uh oh! There's been an error checking if there's a user logged-in.
             Error: ${err}
             `)
             onFetchEnd();
@@ -648,8 +648,8 @@ async function registerNewUser(userObj) {
 //Checks if login is current and recent and, if not, renews login token
 async function renewToken() {
     if(!isLoggedIn()){
-        const username = localStorage.getItem('username');
         const password = localStorage.getItem('password');
+        const username = localStorage.getItem('username');
         fetchLogIn(username, password);
     }
 }
